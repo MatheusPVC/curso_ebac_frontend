@@ -1,0 +1,1 @@
+let mensagem="quem sou eu?";function conversa(e){""!=mensagem?console.log("Não estou entendendo"):console.log(mensagem)}
