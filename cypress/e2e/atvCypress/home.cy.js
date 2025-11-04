@@ -13,19 +13,20 @@ describe('Testes da Agenda de Contatos', () => {
         cy.get('.contato').should('have.length.greaterThan', 3)
     })
 
-    it('Deverá editar o primeiro contato', () => {
-        cy.get('.edit').first().click()
+    it('Deverá editar o ultimo contato', () => {
+        cy.get('.edit').last().click()
         cy.get('input[type="text"]').clear()
-        cy.get('input[type="text"]').type('Zetsu Preto')
+        cy.get('input[type="text"]').type('Zetsu Preto Sinistro')
         cy.get('input[type="email"]').clear()
         cy.get('input[type="email"]').type('soleiomadara@teste.com')
         cy.get('input[type="tel"]').clear()
         cy.get('input[type="tel"]').type('00 00112233')
         cy.get('.alterar').click()
+        cy.contains('Zetsu Preto Sinistro').should('exist')
     })
 
     it('Deverá excluir um contato', () => {
-        cy.get('.delete').first().click()
+        cy.get('.delete').last().click()
         cy.get('.contato').should('have.length', 3)
     })
 })
